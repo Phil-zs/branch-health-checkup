@@ -1,0 +1,14 @@
+# Generated reports and local source data
+output/
+outputs/
+input/
+knowledge/
+*.xlsx
+*.xls
+*.csv
+*.json
+
+# Local runtime files
+node_modules/
+.DS_Store
+Thumbs.db
