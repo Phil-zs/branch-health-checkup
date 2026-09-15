@@ -1,0 +1,8 @@
+interface:
+  display_name: "一键智诊：五维经营体检"
+  short_description: "分析营业部经营与营收现状，生成五维体检 HTML 报告"
+  brand_color: "#0B7285"
+  default_prompt: "使用 $branch-health-checkup 分析一份营业部的 XLSX、CSV 或 JSON 数据，并生成自包含 HTML 经营体检报告。"
+
+policy:
+  allow_implicit_invocation: true
