@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年7月星沙大道营业部经营体检报告</title>
+<style>
+  @page { size: A4; margin: 12mm; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #fff;
+    color: #1a1d21;
+    line-height: 1.75;
+    font-size: 13px;
+    width: 186mm;
+    margin: 0 auto;
+  }
+
+  .report-header { border-bottom: 2px solid #333; padding-bottom: 12px; margin-bottom: 16px; }
+  .report-header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    white-space: nowrap;
+  }
+  .report-header .branch-info {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0 12px;
+    align-items: center;
+    font-size: 11px;
+    color: #555;
+    white-space: nowrap;
+  }
+
+  .basic-info-box {
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+  .basic-info-title {
+    padding: 5px 12px;
+    background: #e8e8e8;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .basic-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .basic-info-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    min-width: 0;
+    padding: 7px 12px;
+    white-space: nowrap;
+  }
+  .basic-info-label {
+    color: #666;
+    font-size: 11px;
+  }
+  .basic-info-value {
+    color: #1a1d21;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: right;
+  }
+
+  .summary-heading-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 0;
+    page-break-after: avoid;
+  }
+  .summary-heading-row > div {
+    padding: 5px 12px;
+    background: #e8e8e8;
+    color: #1a1d21;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+  .score-banner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); width: 100%; margin-bottom: 16px; border-bottom: 1px solid #ddd; page-break-after: avoid; }
+  .summary-panel { min-width: 0; padding: 9px 12px 10px; }
+  .summary-panel + .summary-panel { border-left: 1px solid #ddd; }
+  .summary-panel-body { display: flex; align-items: flex-start; gap: 9px; }
+  .score-num { flex: 0 0 60px; font-size: 34px; font-weight: 700; line-height: 1; }
+  .score-info { min-width: 0; flex: 1; }
+  .score-info h2 { font-size: 15px; font-weight: 600; margin-bottom: 2px; border: none; padding: 0; display: inline; background: none; }
+  .score-info p { font-size: 11px; color: #666; line-height: 1.55; }
+  .score-info .focus { font-size: 11px; font-weight: 600; margin-top: 3px; line-height: 1.55; }
+  .light-summary { display: flex; gap: 6px; margin-top: 4px; color: #666; font-size: 9px; line-height: 1.4; }
+  .light-summary span { white-space: nowrap; }
+  .light-summary .count { font-weight: 400; font-size: inherit; }
+  .ability-meta { display: flex; gap: 3px; margin-top: 4px; color: #666; font-size: 9px; line-height: 1.4; white-space: nowrap; }
+  .ability-meta span { display: inline; }
+
+  h2 { font-size: 15px; font-weight: 700; margin-bottom: 10px; padding: 5px 12px; background: #e8e8e8; page-break-after: avoid; }
+  h3 { font-size: 13px; font-weight: 600; margin: 12px 0 6px; }
+
+  section { margin-bottom: 20px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; table-layout: fixed; }
+  th { text-align: left; padding: 6px 8px; font-weight: 600; border-bottom: 2px solid #333; background: #f5f5f5; }
+  td { padding: 6px 8px; border-bottom: 1px solid #ddd; vertical-align: top; word-wrap: break-word; }
+  tr:last-child td { border-bottom: none; }
+  .tracking-table { font-size: 11px; }
+  .tracking-table th,
+  .tracking-table td {
+    padding: 4px 6px;
+    line-height: 1.45;
+    white-space: nowrap;
+  }
+
+  .tag { display: inline-block; padding: 1px 6px; border: 1px solid #999; border-radius: 3px; font-size: 10px; font-weight: 600; }
+  .tag-red { border-color: #333; }
+  .tag-yellow { border-color: #999; }
+
+  .item { padding: 0; margin: 10px 0; border: 1px solid #ddd; border-left: 3px solid #333; page-break-inside: avoid; }
+  .branch-analysis-section .item { break-inside: auto; page-break-inside: auto; }
+  .branch-analysis-section .trend-row { break-inside: avoid; page-break-inside: avoid; }
+  .item-red { border-left-color: #333; }
+  .item-yellow { border-left-color: #999; }
+  .item .ri-head { font-weight: 700; font-size: 13px; padding: 6px 12px; border-bottom: 1px solid #e0e0e0; background: #fafafa; }
+  .item .ri-val { font-size: 11px; color: #666; padding: 4px 12px; border-bottom: 1px solid #f0f0f0; }
+  .item .ri-cause { font-size: 12px; padding: 6px 12px; line-height: 1.7; }
+  .item .ri-action { font-size: 12px; line-height: 1.7; padding: 6px 12px; border-top: 1px dashed #e0e0e0; }
+  .trend-cause .trend-row { margin: 4px 0 8px; }
+  .cause-line > strong { display: inline; }
+  .trend-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 10px 0 2px;
+  }
+  .trend-card {
+    min-width: 0;
+    border: 0;
+    padding: 5px 0 0;
+    background: #fff;
+    page-break-inside: avoid;
+  }
+  .trend-card-title {
+    margin-bottom: 1px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .trend-card svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .trend-card .trend-gridline { stroke: #e6e6e6; stroke-width: 1; }
+  .trend-card .trend-axis { stroke: #999; stroke-width: 1; }
+  .trend-card .trend-branch { fill: none; stroke: #333; stroke-width: 2.4; }
+  .trend-card .trend-peer { fill: none; stroke: #777; stroke-width: 1.8; stroke-dasharray: 7 5; }
+  .trend-card .trend-label,
+  .trend-card .trend-tick,
+  .trend-card .trend-value {
+    fill: #444;
+    font-family: sans-serif;
+  }
+  .trend-card .trend-label { font-size: 10px; }
+  .trend-card .trend-tick { font-size: 9px; }
+  .trend-card .trend-value { font-size: 9px; font-weight: 700; }
+  .trend-legend {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: -1px;
+    color: #666;
+    font-size: 9px;
+    line-height: 1.2;
+  }
+  .trend-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+  .trend-legend i {
+    display: inline-block;
+    width: 17px;
+    border-top: 2px solid #333;
+  }
+  .trend-legend i.peer-line {
+    border-top: 1.5px dashed #777;
+  }
+  .digital-flow {
+    margin: 4px 0 9px;
+    padding: 7px 0 5px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  .digital-flow-title {
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .digital-flow-track {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(0, 1fr);
+    gap: 6px;
+    align-items: center;
+  }
+  .digital-stage {
+    min-width: 0;
+    min-height: 86px;
+    padding: 6px 8px 7px;
+    border: 1px solid #bbb;
+    border-top: 3px solid #333;
+    background: #fafafa;
+    text-align: center;
+  }
+  .digital-stage-kicker {
+    color: #666;
+    font-size: 10px;
+    line-height: 1.25;
+  }
+  .digital-stage-name {
+    min-height: 28px;
+    margin: 2px 0 4px;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .digital-stage-values {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    white-space: nowrap;
+    font-size: 10px;
+    line-height: 1.35;
+  }
+  .digital-stage-values strong {
+    font-size: 13px;
+  }
+  .digital-stage-peer {
+    color: #666;
+  }
+  .digital-stage-gap {
+    margin-top: 3px;
+    color: #555;
+    font-size: 10px;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+  .digital-flow-arrow {
+    position: relative;
+    z-index: 0;
+    color: #777;
+    font-size: 22px;
+    line-height: 1;
+    text-align: center;
+  }
+  .digital-flow-arrow::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #bbb;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+  .digital-flow-arrow span {
+    position: relative;
+    z-index: 1;
+    padding: 0 2px;
+    background: #fff;
+  }
+  .digital-summary {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .leader-flow-two {
+    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr);
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .leader-evidence-list {
+    margin: 8px 0 2px;
+    border-top: 1px solid #e0e0e0;
+  }
+  .leader-evidence-entry {
+    padding: 6px 0;
+    border-bottom: 1px solid #eceff1;
+  }
+  .leader-evidence-name {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .leader-evidence-name span {
+    flex: 0 0 auto;
+    color: #666;
+    font-size: 11px;
+    font-weight: 400;
+  }
+  .leader-evidence-detail {
+    margin-top: 2px;
+    color: #555;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .conclusion { margin: 10px 0; }
+  .conclusion p { font-size: 13px; line-height: 1.8; padding: 8px 12px; }
+
+  .summary-grid { display: grid; grid-template-columns: 85mm 1fr; gap: 10px; align-items: stretch; margin: 10px 0; page-break-inside: avoid; }
+  .radar-box { border: 1px solid #ddd; padding: 8px; display: flex; flex-direction: column; }
+  .radar-box .chart-title { font-size: 13px; font-weight: 700; margin-bottom: 2px; text-align: center; }
+  .summary-table-wrap { border: 1px solid #ddd; display: flex; flex-direction: column; }
+  .summary-table-wrap .chart-title { font-size: 13px; font-weight: 700; padding: 8px 8px 2px; text-align: center; }
+  .summary-table { font-size: 12px; flex: 1; }
+  .summary-table th { background: #f5f5f5; padding: 6px 8px; }
+  .summary-table td { padding: 5px 8px; }
+  .summary-total { font-weight: 700; border-top: 2px solid #333; }
+  .summary-table:not(.manager-summary-table) th:first-child { width: 42%; }
+  .summary-table:not(.manager-summary-table) th:last-child { width: 22%; }
+  .manager-summary-table th:first-child { width: 54%; }
+  .manager-summary-table th:nth-child(2) { width: 22%; }
+  .manager-summary-grid { margin-top: 10px; }
+  .manager-summary-grid .radar-box,
+  .manager-summary-grid .summary-table-wrap { min-height: 250px; }
+  .manager-summary-grid .radar-box svg { max-height: 226px; }
+  .manager-summary-grid .summary-table-wrap .chart-title { padding-bottom: 5px; }
+  .manager-summary-table th { text-align: left; }
+  .manager-summary-table td:last-child,
+  .manager-summary-table th:last-child { text-align: right; }
+  .manager-summary-table .manager-score { font-size: 11px; font-weight: 700; line-height: 1.2; color: #1a1d21; }
+  .manager-summary-table .manager-status { font-weight: 600; }
+  .dual-summary-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; align-items: start; margin: 10px 0; page-break-inside: avoid; }
+  .summary-column { min-width: 0; }
+  .summary-column > h2 { margin-top: 0; }
+  .summary-column .summary-grid { display: block; margin: 0; }
+  .summary-column .radar-box { height: 250px; min-height: 250px; margin-bottom: 10px; }
+  .summary-column .radar-box svg { max-height: 215px; }
+  .summary-column .summary-table-wrap { min-height: 0; }
+  .summary-column .summary-table { font-size: 10px; }
+  .summary-column .summary-table th,
+  .summary-column .summary-table td { height: 30px; padding: 5px 4px; white-space: nowrap; }
+  .summary-column .summary-table th { white-space: nowrap; }
+  .summary-column .summary-table td { word-break: normal; }
+  .manager-peer { stroke:#999;stroke-width:1;fill:none;stroke-dasharray:4 3; }
+  .manager-legend { display: flex; justify-content: center; gap: 14px; margin-top: -2px; color: #555; font-size: 9px; }
+  .manager-legend span { display: inline-flex; align-items: center; gap: 4px; }
+  .manager-legend i { display: inline-block; width: 18px; border-top: 1.5px solid #333; }
+  .manager-legend i.peer-line { border-top: 1px dashed #999; }
+
+  .overall-box { margin-top: 10px; page-break-inside: avoid; }
+  .overall-box .ob-title { font-size: 13px; font-weight: 700; padding: 5px 12px; background: #e8e8e8; }
+  .overall-box .ob-text { font-size: 12px; line-height: 1.8; padding: 8px 12px; }
+  .chapter-heading { margin: 26px 0 12px; padding: 7px 12px; border-left: 4px solid #333; background: #dcdcdc; font-size: 17px; font-weight: 700; line-height: 1.35; page-break-after: avoid; }
+  .manager-analysis-section { break-before: page; page-break-before: always; }
+  .manager-analysis-section .chapter-heading { margin-top: 0; }
+  .manager-analysis-note { margin: 8px 0 14px; color: #666; font-size: 11px; }
+
+  .appendix-block { margin: 14px 0; page-break-inside: avoid; }
+  .appendix-section { break-before: page; page-break-before: always; }
+  .appendix-head { display: flex; align-items: baseline; gap: 20px; padding: 6px 10px; background: #f5f5f5; border-bottom: 2px solid #333; }
+  .appendix-head .dim-name { font-size: 14px; font-weight: 700; }
+  .appendix-head .dim-score { font-size: 16px; font-weight: 700; }
+  .appendix-head .light-count { font-size: 11px; color: #555; }
+  .appendix-table { width: 100%; border-collapse: collapse; font-size: 11px; table-layout: fixed; }
+  .appendix-table th { background: #fafafa; padding: 4px 8px; font-weight: 600; border-bottom: 1px solid #333; text-align: left; }
+  .appendix-table td { padding: 3px 8px; border-bottom: 1px solid #eee; vertical-align: middle; word-wrap: break-word; }
+  .appendix-table .ind-name { padding-left: 16px; color: #555; }
+  .appendix-table .ind-sub { padding-left: 28px; color: #888; font-size: 10px; }
+  .appendix-table .score { text-align: right; }
+  .appendix-subheading { margin: 24px 0 10px; padding: 7px 12px; border-left: 4px solid #333; background: #e8e8e8; font-size: 15px; font-weight: 700; line-height: 1.35; page-break-after: avoid; }
+  .manager-appendix-start { break-before: page; page-break-before: always; }
+  .manager-appendix-note { margin: 0 0 12px; color: #666; font-size: 11px; line-height: 1.6; }
+  .manager-appendix-table { font-size: 10.5px; }
+  .manager-appendix-table th, .manager-appendix-table td { padding: 4px 5px; line-height: 1.4; }
+  .manager-appendix-table th.metric-type,
+  .manager-appendix-table th.metric-weight,
+  .manager-appendix-table td.metric-type,
+  .manager-appendix-table td.metric-weight { text-align: center; white-space: nowrap; }
+  .manager-appendix-table .score { font-weight: 600; }
+  .status-mini { display: inline-block; padding: 0 5px; border-radius: 2px; font-size: 10px; font-weight: 600; border: 1px solid; }
+  .status-green { color: #444; border-color: #bbb; background: #f6f6f6; }
+  .status-yellow { color: #555; border-color: #999; background: #f0f0f0; }
+  .status-red { color: #000; border-color: #333; background: #e8e8e8; }
+
+  .footnote { font-size: 10px; color: #999; text-align: center; margin-top: 16px; padding-top: 8px; border-top: 1px solid #ddd; }
+
+  @media print {
+    html, body { width: 186mm; max-width: 186mm; }
+    body { font-size: 11px; }
+    section { page-break-inside: auto; }
+    .item, .appendix-block, .summary-grid, .overall-box { page-break-inside: avoid; }
+    h2 { page-break-after: avoid; }
+  }
+  @media (max-width: 700px) {
+    .summary-heading-row { grid-template-columns: 1fr; gap: 0; }
+    .score-banner { grid-template-columns: 1fr; }
+    .summary-panel + .summary-panel { border-top: 1px solid #ddd; border-left: 0; }
+    .dual-summary-grid { grid-template-columns: 1fr; }
+    .trend-row { grid-template-columns: 1fr; }
+    .digital-flow-track { grid-template-columns: 1fr; gap: 4px; }
+    .digital-flow-arrow { transform: rotate(90deg); }
+  }
+
+
+  :root {
+    --ink: #303741;
+    --heading: #243B53;
+    --muted: #667381;
+    --surface: #F3F5F7;
+    --line: #DFE5EA;
+    --subject: #168C86;
+    --peer: #94A3B8;
+    --best: #B38A3D;
+    --green: #2E7D5B;
+    --amber: #A66B13;
+    --red: #C04B50;
+  }
+  body { color: var(--ink); background: #FFFFFF; }
+  .report-header { border-bottom-color: var(--heading); }
+  .report-header h1, h2, h3, .chart-title, .trend-card-title,
+  .appendix-head .dim-name, .basic-info-title, .summary-heading-row > div,
+  .overall-box .ob-title, .chapter-heading, .appendix-subheading {
+    color: var(--heading);
+  }
+  .basic-info-title, .summary-heading-row > div, h2,
+  .overall-box .ob-title, .chapter-heading, .appendix-subheading {
+    background: var(--surface);
+  }
+  .chapter-heading, .appendix-subheading { border-left-color: var(--heading); }
+  .branch-info, .report-header .branch-info, .basic-info-label,
+  .score-info p, .item .ri-val, .appendix-head .light-count,
+  .manager-appendix-note, .trend-legend { color: var(--muted); }
+  .basic-info-value { color: var(--ink); }
+  .score-num { color: var(--heading); }
+  [data-branch-status="green"] { --branch-color: var(--green); }
+  [data-branch-status="yellow"] { --branch-color: var(--amber); }
+  [data-branch-status="red"] { --branch-color: var(--red); }
+  .score-banner .score-num[data-branch-status] { color: var(--branch-color, var(--heading)); }
+  .score-info h2 { background: none; color: var(--heading); }
+  .score-banner, .summary-panel + .summary-panel, .radar-box,
+  .summary-table-wrap, td, .item, .footnote { border-color: var(--line); }
+  th, .summary-table th, .appendix-table th {
+    color: var(--heading); background: var(--surface); border-bottom-color: #BCC8D2;
+  }
+  .summary-total { background: var(--surface); border-top-color: #BCC8D2; }
+  .summary-table:not(.manager-summary-table) th:nth-child(2) { color: var(--green); }
+  .summary-table:not(.manager-summary-table) th:nth-child(3) { color: var(--amber); }
+  .summary-table:not(.manager-summary-table) th:nth-child(4) { color: var(--red); }
+  .manager-summary-table .manager-score { color: var(--ink); }
+  [data-ability-level="优秀"], [data-ability-level="良好"], [data-ability-level="达标"] { --ability-color: var(--green); }
+  [data-ability-level="待提升"] { --ability-color: var(--amber); }
+  [data-ability-level="预警"] { --ability-color: var(--red); }
+  .manager-summary-table td:last-child[data-ability-level],
+  .score-banner .score-num[data-ability-level],
+  .manager-appendix-start [data-ability-level] { color: var(--ability-color); }
+  .manager-status.caution { color: var(--amber); }
+  .manager-status.warning { color: var(--red); }
+  .status-mini.status-green { color: var(--green); background: #EDF6F0; border-color: #C9DFD1; }
+  .status-mini.status-yellow { color: var(--amber); background: #FFF7E8; border-color: #EAD5AF; }
+  .status-mini.status-red { color: var(--red); background: #FBEFF0; border-color: #EDCDD0; }
+  .item.item-red, .item:has(.ri-head .status-red) { border-left-color: var(--red); }
+  .item.item-yellow { border-left-color: var(--amber); }
+  .item.item-yellow:has(.ri-head .status-red) { border-left-color: var(--red); }
+  .item .ri-head { background: #FAFBFC; border-bottom-color: var(--line); color: var(--heading); }
+  .item .ri-val { border-bottom-color: #EEF1F4; }
+  .item .ri-action { border-top-color: var(--line); }
+  .ri-cause strong, .ri-action strong { color: var(--heading); }
+  .appendix-head { background: var(--surface); border-bottom-color: #BCC8D2; }
+  .appendix-head .dim-score { color: var(--heading); }
+  .appendix-table td { border-bottom-color: #E8EDF1; }
+  .manager-appendix-table td:nth-child(3) { color: #64748B; }
+  .footnote { color: #7B8794; }
+  .radar-box svg .branch, .radar-box svg .manager-shape {
+    stroke: var(--subject); fill: var(--subject); fill-opacity: 0.10; stroke-width: 1.8;
+  }
+  .radar-box svg .peer, .radar-box svg .manager-peer { stroke: var(--peer); }
+  .radar-box svg .top, .radar-box svg .manager-top { stroke: var(--best); stroke-width: 1.3; }
+  .radar-box svg .axis, .radar-box svg .manager-axis { stroke: #D2DBE2; fill: none; }
+  .radar-box svg .grid, .radar-box svg .manager-grid { stroke: #E5EBEF; fill: none; }
+  .radar-box svg .lbl, .radar-box svg .manager-lbl { fill: var(--heading); }
+  .radar-box svg .lg, .radar-box svg .manager-lg { fill: var(--muted); }
+  .radar-box svg > line[stroke="#333"] { stroke: var(--subject); }
+  .radar-box svg > line[stroke="#999"] { stroke: var(--peer); }
+  .radar-box svg > line[stroke="#666"] { stroke: var(--best); }
+  .trend-card .trend-branch { stroke: var(--subject); }
+  .trend-card .trend-peer { stroke: var(--peer); }
+  .trend-card .trend-gridline { stroke: #E5EBEF; }
+  .trend-card .trend-axis { stroke: #B7C3CD; }
+  .trend-card .trend-label, .trend-card .trend-tick, .trend-card .trend-value { fill: var(--muted); }
+  .trend-legend i.branch-line { border-top-color: var(--subject); }
+  .trend-legend i.peer-line { border-top-color: var(--peer); }
+  @media print {
+    body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="report-header">
+    <h1>2026年7月星沙大道营业部经营体检报告</h1>
+    <div class="branch-info">
+      <span>负责人：李明</span>
+      <span>成立时间：2018年06月</span>
+      <span>员工人数：24人</span>
+      <span>营业部类别：C</span>
+    </div>
+  </div>
+
+  <div class="basic-info-box">
+    <div class="basic-info-title">基本信息</div>
+    <div class="basic-info-grid">
+      <div class="basic-info-item"><span class="basic-info-label">本年营业收入</span><span class="basic-info-value">1,286万元</span></div>
+      <div class="basic-info-item"><span class="basic-info-label">本年考核利润</span><span class="basic-info-value">468万元</span></div>
+      <div class="basic-info-item"><span class="basic-info-label">考核同类排名</span><span class="basic-info-value">18/35</span></div>
+      <div class="basic-info-item"><span class="basic-info-label">总资产</span><span class="basic-info-value">68.4亿元</span></div>
+      <div class="basic-info-item"><span class="basic-info-label">资产过万户数</span><span class="basic-info-value">1,450户</span></div>
+      <div class="basic-info-item"><span class="basic-info-label">负责人任职时间</span><span class="basic-info-value">2023年06月</span></div>
+    </div>
+  </div>
+
+  <div class="summary-heading-row">
+    <div>营业部综合情况</div>
+    <div>负责人综合情况</div>
+  </div>
+
+  <div class="score-banner">
+    <div class="summary-panel">
+      <div class="summary-panel-body">
+        <div class="score-num" data-branch-status="green">85.6</div>
+        <div class="score-info">
+          <h2>综合健康度：健康（绿灯）</h2>
+          <p>较上期（83.4分）上升2.2分，健康度环比改善</p>
+          <p class="focus">本月重点关注：经营效益与资产与客群处于黄灯状态，仍需持续提升经营质效与客群经营深度</p>
+          <div class="light-summary">
+            <span>绿灯 <span class="count">3</span></span>
+            <span>黄灯 <span class="count">2</span></span>
+            <span>红灯 <span class="count">0</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="summary-panel">
+      <div class="summary-panel-body">
+        <div class="score-num" data-ability-level="良好">81.4</div>
+        <div class="score-info">
+          <h2>综合能力等级：良好</h2>
+          <p>五维能力覆盖优秀、良好、达标和待提升四个层级</p>
+          <p class="focus">重点提升：数字化应用力 68 分，需强化工具应用与线索转化管理</p>
+          <div class="ability-meta">
+            <span>团队92｜经营85｜财富76｜数字68｜合规86</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="dual-summary-grid">
+      <article class="summary-column">
+        <div class="summary-grid">
+          <div class="radar-box">
+            <div class="chart-title">同类指标对标</div>
+            <svg viewBox="0 0 300 260" width="100%" style="display:block;">
+              <defs>
+                <style>
+                  .axis{stroke:#ccc;stroke-width:0.5;fill:none}
+                  .grid{stroke:#eee;stroke-width:0.5;fill:none}
+                  .lbl{font-size:10px;fill:#333;font-family:sans-serif}
+                  .branch{stroke:#333;stroke-width:1.5;fill:#333;fill-opacity:0.12}
+                  .peer{stroke:#999;stroke-width:1;fill:none;stroke-dasharray:4 3}
+                  .top{stroke:#666;stroke-width:1;fill:none;stroke-dasharray:8 3 1 3}
+                  .lg{font-size:10px;fill:#555;font-family:sans-serif}
+                </style>
+              </defs>
+              <g transform="translate(150,120)">
+                <circle class="grid" r="30"/>
+                <circle class="grid" r="60"/>
+                <circle class="grid" r="90"/>
+                <line class="axis" x1="0" y1="0" x2="0" y2="-90"/>
+                <line class="axis" x1="0" y1="0" x2="85.6" y2="-27.8"/>
+                <line class="axis" x1="0" y1="0" x2="52.9" y2="72.8"/>
+                <line class="axis" x1="0" y1="0" x2="-52.9" y2="72.8"/>
+                <line class="axis" x1="0" y1="0" x2="-85.6" y2="-27.8"/>
+                <text class="lbl" x="0" y="-96" text-anchor="middle">经营效益</text>
+                <text class="lbl" x="92" y="-24" text-anchor="start">资产与客群</text>
+                <text class="lbl" x="60" y="84" text-anchor="start">二次业务开发</text>
+                <text class="lbl" x="-60" y="84" text-anchor="end">团队效能</text>
+                <text class="lbl" x="-92" y="-24" text-anchor="end">合规与风控</text>
+                <polygon class="top" points="0,-86.4 83.9,-27.2 46.0,63.3 -48.7,67.0 -81.3,-26.4"/>
+                <polygon class="peer" points="0,-75.6 62.5,-20.3 35.4,48.7 -39.7,54.6 -72.7,-23.6"/>
+                <polygon class="branch" points="0,-78.3 73.0,-23.7 44.4,61.2 -43.9,60.4 -71.9,-23.4"/>
+              </g>
+              <line x1="24" y1="240" x2="44" y2="240" stroke="#333" stroke-width="1.5"/>
+              <text class="lg" x="48" y="243">本机构</text>
+              <line x1="111" y1="240" x2="131" y2="240" stroke="#999" stroke-width="1" stroke-dasharray="4 3"/>
+              <text class="lg" x="135" y="243">同类均值</text>
+              <line x1="205" y1="240" x2="225" y2="240" stroke="#666" stroke-width="1" stroke-dasharray="8 3 1 3"/>
+              <text class="lg" x="229" y="243">同类第一名</text>
+            </svg>
+          </div>
+          <div class="summary-table-wrap">
+            <div class="chart-title">五大核心维度</div>
+            <table class="summary-table">
+              <colgroup>
+                <col style="width:42%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:22%">
+              </colgroup>
+              <thead>
+                <tr><th>维度</th><th>绿</th><th>黄</th><th>红</th><th>得分</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>经营效益</strong></td><td>0</td><td>1</td><td>0</td><td>43.5 / 50</td></tr>
+                <tr><td><strong>资产与客群</strong></td><td>0</td><td>1</td><td>0</td><td>12.8 / 15</td></tr>
+                <tr><td><strong>二次业务开发</strong></td><td>1</td><td>0</td><td>0</td><td>12.6 / 15</td></tr>
+                <tr><td><strong>团队效能</strong></td><td>1</td><td>0</td><td>0</td><td>8.3 / 10</td></tr>
+                <tr><td><strong>合规与风控</strong></td><td>1</td><td>0</td><td>0</td><td>8.4 / 10</td></tr>
+                <tr style="font-weight:700;border-top:2px solid #333;"><td>合计</td><td>3</td><td>2</td><td>0</td><td>85.6 / 100</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+      <article class="summary-column">
+        <div class="summary-grid">
+          <div class="radar-box">
+            <div class="chart-title">同类能力对标</div>
+            <svg viewBox="0 0 300 260" width="100%" style="display:block;">
+              <defs>
+                <style>
+                  .manager-axis{stroke:#ccc;stroke-width:0.5;fill:none}
+                  .manager-grid{stroke:#eee;stroke-width:0.5;fill:none}
+                  .manager-lbl{font-size:9px;fill:#333;font-family:sans-serif}
+                  .manager-shape{stroke:#333;stroke-width:1.5;fill:#333;fill-opacity:0.12}
+                  .manager-peer{stroke:#999;stroke-width:1;fill:none;stroke-dasharray:4 3}
+                  .manager-top{stroke:#666;stroke-width:1;fill:none;stroke-dasharray:8 3 1 3}
+                  .manager-lg{font-size:10px;fill:#555;font-family:sans-serif}
+                </style>
+              </defs>
+              <g transform="translate(150,120)">
+                <circle class="manager-grid" r="30"/>
+                <circle class="manager-grid" r="60"/>
+                <circle class="manager-grid" r="90"/>
+                <line class="manager-axis" x1="0" y1="0" x2="0" y2="-90"/>
+                <line class="manager-axis" x1="0" y1="0" x2="85.6" y2="-27.8"/>
+                <line class="manager-axis" x1="0" y1="0" x2="52.9" y2="72.8"/>
+                <line class="manager-axis" x1="0" y1="0" x2="-52.9" y2="72.8"/>
+                <line class="manager-axis" x1="0" y1="0" x2="-85.6" y2="-27.8"/>
+                <text class="manager-lbl" x="0" y="-98" text-anchor="middle">团队领导力</text>
+                <text class="manager-lbl" x="91" y="-25" text-anchor="start">经营决策力</text>
+                <text class="manager-lbl" x="58" y="84" text-anchor="start">财富管理专业力</text>
+                <text class="manager-lbl" x="-58" y="84" text-anchor="end">数字化应用力</text>
+                <text class="manager-lbl" x="-91" y="-25" text-anchor="end">合规内控力</text>
+                <polygon class="manager-top" points="0,-86.4 79.6,-25.9 48.1,66.2 -46.6,64.1 -80.5,-26.1"/>
+                <polygon class="manager-peer" points="0,-67.5 66.8,-21.7 38.1,52.4 -37.0,51.0 -65.9,-21.4"/>
+                <polygon class="manager-shape" points="0,-82.8 72.7,-23.6 40.2,55.3 -36.0,49.4 -73.6,-23.9"/>
+              </g>
+              <line x1="24" y1="240" x2="44" y2="240" stroke="#333" stroke-width="1.5"/>
+              <text class="manager-lg" x="48" y="243">本人</text>
+              <line x1="102" y1="240" x2="122" y2="240" stroke="#999" stroke-width="1" stroke-dasharray="4 3"/>
+              <text class="manager-lg" x="126" y="243">同类均值</text>
+              <line x1="205" y1="240" x2="225" y2="240" stroke="#666" stroke-width="1" stroke-dasharray="8 3 1 3"/>
+              <text class="manager-lg" x="229" y="243">同类第一名</text>
+            </svg>
+          </div>
+          <div class="summary-table-wrap">
+            <div class="chart-title">五维能力得分</div>
+            <table class="summary-table manager-summary-table">
+              <colgroup>
+                <col style="width:54%"><col style="width:22%"><col style="width:24%">
+              </colgroup>
+              <thead>
+                <tr><th>能力维度</th><th>得分</th><th>状态</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>团队领导力</strong></td><td class="manager-score">92</td><td class="manager-status" data-ability-level="优秀">优秀</td></tr>
+                <tr><td><strong>经营决策力</strong></td><td class="manager-score">85</td><td class="manager-status" data-ability-level="良好">良好</td></tr>
+                <tr><td><strong>财富管理专业力</strong></td><td class="manager-score">76</td><td class="manager-status" data-ability-level="达标">达标</td></tr>
+                <tr><td><strong>数字化应用力</strong></td><td class="manager-score">68</td><td class="manager-status" data-ability-level="待提升">待提升</td></tr>
+                <tr><td><strong>合规内控力</strong></td><td class="manager-score">86</td><td class="manager-status" data-ability-level="良好">良好</td></tr>
+                <tr style="font-weight:700;border-top:2px solid #333;"><td>综合得分</td><td class="manager-score">81.4 / 100</td><td data-ability-level="良好">良好</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="overall-box">
+      <div class="ob-title">总体概述</div>
+      <div class="ob-text">本期星沙大道营业部综合得分85.6分，较上期提升2.2分，整体处于“健康”状态。二次业务开发、团队效能和合规与风控均已达到绿灯，经营运行更加均衡；经营效益与资产与客群仍处于黄灯，是下一阶段的持续改善重点。负责人综合得分81.4分，能力等级为“良好”；团队领导力达到优秀，经营决策力和合规内控力为良好，财富管理专业力为达标，数字化应用力68分为待提升。下一阶段，营业部应围绕经营质效提升、重点客群分层经营和业务转化效率持续夯实健康基础，负责人同步加强数字化工具运用、数据驱动经营和线索转化管理，形成经营推进与能力提升并行的改进安排。</div>
+    </div>
+  </section>
+
+  <div class="chapter-heading">分支机构分析</div>
+
+  <section class="branch-analysis-section">
+    <h2>需关注主题（黄灯 · 共2项）</h2>
+
+    <div class="item item-yellow">
+      <div class="ri-head">经营效益 <span class="tag tag-yellow">黄灯</span></div>
+      <div class="ri-val">当前值：43.5 / 50，黄灯 | 阈值：维度综合判定为黄灯时，纳入需关注主题</div>
+      <div class="ri-cause trend-cause">
+        <div class="trend-summary">
+          <strong>趋势解读：</strong>考核利润由2023年的392万元逐年升至2025年的535万元，2026年7月回落至468万元，较阶段高点下降12.5%，并低于同类均值约522万元；两融日均余额由11.2亿元升至2025年的16.1亿元后回落至14.9亿元，低于同类均值约15.8亿元。
+          <br><strong>可能原因：</strong>两项核心指标均在高位后回落，利润目标完成率仅为90%，两融日均余额份额增幅仅为+2%，利润贡献与两融业务规模的波动共同影响经营效益，经营改善的持续性不足，是本期经营效益处于黄灯状态的主要表现。
+        </div>
+        <div class="trend-row">
+          <div class="trend-card">
+            <div class="trend-card-title">考核利润变动趋势（万元）</div>
+            <svg viewBox="0 0 330 180" role="img" aria-label="星沙大道营业部近四年考核利润变动趋势">
+              <line class="trend-gridline" x1="40" y1="24" x2="318" y2="24"/>
+              <line class="trend-gridline" x1="40" y1="52" x2="318" y2="52"/>
+              <line class="trend-gridline" x1="40" y1="80" x2="318" y2="80"/>
+              <line class="trend-gridline" x1="40" y1="108" x2="318" y2="108"/>
+              <line class="trend-gridline" x1="40" y1="136" x2="318" y2="136"/>
+              <line class="trend-axis" x1="40" y1="24" x2="40" y2="136"/>
+              <line class="trend-axis" x1="40" y1="136" x2="318" y2="136"/>
+              <text class="trend-tick" x="34" y="27" text-anchor="end">600</text>
+              <text class="trend-tick" x="34" y="55" text-anchor="end">525</text>
+              <text class="trend-tick" x="34" y="83" text-anchor="end">450</text>
+              <text class="trend-tick" x="34" y="111" text-anchor="end">375</text>
+              <text class="trend-tick" x="34" y="139" text-anchor="end">300</text>
+              <polyline class="trend-peer" points="50,108 136,93 222,53 308,54"/>
+              <polyline class="trend-branch" points="50,102 136,84 222,48 308,73"/>
+              <circle cx="50" cy="102" r="3.5" fill="#333"/>
+              <circle cx="136" cy="84" r="3.5" fill="#333"/>
+              <circle cx="222" cy="48" r="3.5" fill="#333"/>
+              <circle cx="308" cy="73" r="3.5" fill="#333"/>
+              <text class="trend-value" x="50" y="94" text-anchor="middle">392</text>
+              <text class="trend-value" x="136" y="76" text-anchor="middle">438</text>
+              <text class="trend-value" x="222" y="40" text-anchor="middle">535</text>
+              <text class="trend-value" x="308" y="65" text-anchor="middle">468</text>
+              <text class="trend-label" x="50" y="153" text-anchor="middle">2023年</text>
+              <text class="trend-label" x="136" y="153" text-anchor="middle">2024年</text>
+              <text class="trend-label" x="222" y="153" text-anchor="middle">2025年</text>
+              <text class="trend-label" x="308" y="153" text-anchor="middle">2026年7月</text>
+              <line x1="84" y1="171" x2="101" y2="171" stroke="#333" stroke-width="2.4"/>
+              <text class="trend-tick" x="105" y="174">本营业部</text>
+              <line x1="190" y1="171" x2="207" y2="171" stroke="#777" stroke-width="1.8" stroke-dasharray="7 5"/>
+              <text class="trend-tick" x="211" y="174">同类均值</text>
+            </svg>
+          </div>
+          <div class="trend-card">
+            <div class="trend-card-title">两融日均余额变动趋势（亿元）</div>
+            <svg viewBox="0 0 330 180" role="img" aria-label="星沙大道营业部近四年两融日均余额变动趋势">
+              <line class="trend-gridline" x1="40" y1="24" x2="318" y2="24"/>
+              <line class="trend-gridline" x1="40" y1="52" x2="318" y2="52"/>
+              <line class="trend-gridline" x1="40" y1="80" x2="318" y2="80"/>
+              <line class="trend-gridline" x1="40" y1="108" x2="318" y2="108"/>
+              <line class="trend-gridline" x1="40" y1="136" x2="318" y2="136"/>
+              <line class="trend-axis" x1="40" y1="24" x2="40" y2="136"/>
+              <line class="trend-axis" x1="40" y1="136" x2="318" y2="136"/>
+              <text class="trend-tick" x="34" y="27" text-anchor="end">18</text>
+              <text class="trend-tick" x="34" y="55" text-anchor="end">16</text>
+              <text class="trend-tick" x="34" y="83" text-anchor="end">14</text>
+              <text class="trend-tick" x="34" y="111" text-anchor="end">12</text>
+              <text class="trend-tick" x="34" y="139" text-anchor="end">10</text>
+              <polyline class="trend-peer" points="50,111 136,94 222,67 308,55"/>
+              <polyline class="trend-branch" points="50,119 136,88 222,51 308,79"/>
+              <circle cx="50" cy="119" r="3.5" fill="#333"/>
+              <circle cx="136" cy="88" r="3.5" fill="#333"/>
+              <circle cx="222" cy="51" r="3.5" fill="#333"/>
+              <circle cx="308" cy="79" r="3.5" fill="#333"/>
+              <text class="trend-value" x="50" y="111" text-anchor="middle">11.2</text>
+              <text class="trend-value" x="136" y="80" text-anchor="middle">13.4</text>
+              <text class="trend-value" x="222" y="43" text-anchor="middle">16.1</text>
+              <text class="trend-value" x="308" y="71" text-anchor="middle">14.9</text>
+              <text class="trend-label" x="50" y="153" text-anchor="middle">2023年</text>
+              <text class="trend-label" x="136" y="153" text-anchor="middle">2024年</text>
+              <text class="trend-label" x="222" y="153" text-anchor="middle">2025年</text>
+              <text class="trend-label" x="308" y="153" text-anchor="middle">2026年7月</text>
+              <line x1="84" y1="171" x2="101" y2="171" stroke="#333" stroke-width="2.4"/>
+              <text class="trend-tick" x="105" y="174">本营业部</text>
+              <line x1="190" y1="171" x2="207" y2="171" stroke="#777" stroke-width="1.8" stroke-dasharray="7 5"/>
+              <text class="trend-tick" x="211" y="174">同类均值</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="ri-action"><strong>建议措施：</strong><br>1. 建立经营效益月度复盘机制，围绕收入、客户经营和业务协同明确改进重点。<br>2. 将重点客户经营进度与经营结果联动跟踪，及时调整资源投入和行动节奏。</div>
+    </div>
+
+    <div class="item item-yellow">
+      <div class="ri-head">资产与客群 <span class="tag tag-yellow">黄灯</span></div>
+      <div class="ri-val">当前值：12.8 / 15，黄灯 | 阈值：维度综合判定为黄灯时，纳入需关注主题</div>
+      <div class="ri-cause trend-cause">
+        <div class="trend-summary">
+          <strong>趋势解读：</strong>存量客户资产由2023年的63.8亿元逐步升至2026年7月的68.3亿元，保持增长但增速放缓，近一期同比仅增长1.8%，低于同类均值约69.0亿元；新开高净值客户数由2023年的24人增至2025年的42人，2026年7月回落至33人，较阶段高点下降21.4%，低于同类均值约35人。
+          <br><strong>可能原因：</strong>存量客户资产规模虽保持增长，但高净值存量资产同比仅增长0.5%，资产增长的结构和质量仍显不足；新开高净值客户数在阶段高点后回落，新增重点客群补充不够，客户资产沉淀与高净值客群扩充之间的联动仍不够稳定，是资产与客群处于黄灯状态的主要表现。
+        </div>
+        <div class="trend-row">
+          <div class="trend-card">
+            <div class="trend-card-title">存量客户资产变动趋势（亿元）</div>
+            <svg viewBox="0 0 330 180" role="img" aria-label="星沙大道营业部近四年存量客户资产变动趋势">
+              <line class="trend-gridline" x1="40" y1="24" x2="318" y2="24"/>
+              <line class="trend-gridline" x1="40" y1="52" x2="318" y2="52"/>
+              <line class="trend-gridline" x1="40" y1="80" x2="318" y2="80"/>
+              <line class="trend-gridline" x1="40" y1="108" x2="318" y2="108"/>
+              <line class="trend-gridline" x1="40" y1="136" x2="318" y2="136"/>
+              <line class="trend-axis" x1="40" y1="24" x2="40" y2="136"/>
+              <line class="trend-axis" x1="40" y1="136" x2="318" y2="136"/>
+              <text class="trend-tick" x="34" y="27" text-anchor="end">72</text>
+              <text class="trend-tick" x="34" y="55" text-anchor="end">69</text>
+              <text class="trend-tick" x="34" y="83" text-anchor="end">66</text>
+              <text class="trend-tick" x="34" y="111" text-anchor="end">63</text>
+              <text class="trend-tick" x="34" y="139" text-anchor="end">60</text>
+              <polyline class="trend-peer" points="50,94 136,78 222,63 308,52"/>
+              <polyline class="trend-branch" points="50,101 136,86 222,70 308,59"/>
+              <circle cx="50" cy="101" r="3.5" fill="#333"/>
+              <circle cx="136" cy="86" r="3.5" fill="#333"/>
+              <circle cx="222" cy="70" r="3.5" fill="#333"/>
+              <circle cx="308" cy="59" r="3.5" fill="#333"/>
+              <text class="trend-value" x="50" y="93" text-anchor="middle">63.8</text>
+              <text class="trend-value" x="136" y="78" text-anchor="middle">65.4</text>
+              <text class="trend-value" x="222" y="62" text-anchor="middle">67.1</text>
+              <text class="trend-value" x="308" y="51" text-anchor="middle">68.3</text>
+              <text class="trend-label" x="50" y="153" text-anchor="middle">2023年</text>
+              <text class="trend-label" x="136" y="153" text-anchor="middle">2024年</text>
+              <text class="trend-label" x="222" y="153" text-anchor="middle">2025年</text>
+              <text class="trend-label" x="308" y="153" text-anchor="middle">2026年7月</text>
+              <line x1="84" y1="171" x2="101" y2="171" stroke="#333" stroke-width="2.4"/>
+              <text class="trend-tick" x="105" y="174">本营业部</text>
+              <line x1="190" y1="171" x2="207" y2="171" stroke="#777" stroke-width="1.8" stroke-dasharray="7 5"/>
+              <text class="trend-tick" x="211" y="174">同类均值</text>
+            </svg>
+          </div>
+          <div class="trend-card">
+            <div class="trend-card-title">新开高净值客户数变动趋势（人）</div>
+            <svg viewBox="0 0 330 180" role="img" aria-label="星沙大道营业部近四年新开高净值客户数变动趋势">
+              <line class="trend-gridline" x1="40" y1="24" x2="318" y2="24"/>
+              <line class="trend-gridline" x1="40" y1="52" x2="318" y2="52"/>
+              <line class="trend-gridline" x1="40" y1="80" x2="318" y2="80"/>
+              <line class="trend-gridline" x1="40" y1="108" x2="318" y2="108"/>
+              <line class="trend-gridline" x1="40" y1="136" x2="318" y2="136"/>
+              <line class="trend-axis" x1="40" y1="24" x2="40" y2="136"/>
+              <line class="trend-axis" x1="40" y1="136" x2="318" y2="136"/>
+              <text class="trend-tick" x="34" y="27" text-anchor="end">45</text>
+              <text class="trend-tick" x="34" y="55" text-anchor="end">39</text>
+              <text class="trend-tick" x="34" y="83" text-anchor="end">33</text>
+              <text class="trend-tick" x="34" y="111" text-anchor="end">27</text>
+              <text class="trend-tick" x="34" y="139" text-anchor="end">21</text>
+              <polyline class="trend-peer" points="50,113 136,89 222,66 308,71"/>
+              <polyline class="trend-branch" points="50,122 136,94 222,38 308,80"/>
+              <circle cx="50" cy="122" r="3.5" fill="#333"/>
+              <circle cx="136" cy="94" r="3.5" fill="#333"/>
+              <circle cx="222" cy="38" r="3.5" fill="#333"/>
+              <circle cx="308" cy="80" r="3.5" fill="#333"/>
+              <text class="trend-value" x="50" y="114" text-anchor="middle">24</text>
+              <text class="trend-value" x="136" y="86" text-anchor="middle">30</text>
+              <text class="trend-value" x="222" y="30" text-anchor="middle">42</text>
+              <text class="trend-value" x="308" y="72" text-anchor="middle">33</text>
+              <text class="trend-label" x="50" y="153" text-anchor="middle">2023年</text>
+              <text class="trend-label" x="136" y="153" text-anchor="middle">2024年</text>
+              <text class="trend-label" x="222" y="153" text-anchor="middle">2025年</text>
+              <text class="trend-label" x="308" y="153" text-anchor="middle">2026年7月</text>
+              <line x1="84" y1="171" x2="101" y2="171" stroke="#333" stroke-width="2.4"/>
+              <text class="trend-tick" x="105" y="174">本营业部</text>
+              <line x1="190" y1="171" x2="207" y2="171" stroke="#777" stroke-width="1.8" stroke-dasharray="7 5"/>
+              <text class="trend-tick" x="211" y="174">同类均值</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="ri-action"><strong>建议措施：</strong><br>1. 建立重点客群分层经营机制，明确服务频次、责任人和月度经营计划。<br>2. 完善客户需求回顾与服务记录，持续提升客群经营深度和客户关系稳定性。</div>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>上期改进项跟踪</h2>
+    <table class="tracking-table">
+      <thead><tr><th style="width:34%">上期异常主题</th><th style="width:22%">上期状态</th><th style="width:22%">本期状态</th><th style="width:22%">变化</th></tr></thead>
+      <tbody>
+        <tr><td>经营效益</td><td>黄灯</td><td>黄灯</td><td>部分改善</td></tr>
+        <tr><td>资产与客群</td><td>红灯</td><td>黄灯</td><td>部分改善</td></tr>
+        <tr><td>二次业务开发</td><td>黄灯</td><td>绿灯</td><td>已改善</td></tr>
+        <tr><td>团队效能</td><td>黄灯</td><td>绿灯</td><td>已改善</td></tr>
+        <tr><td>合规与风控</td><td>黄灯</td><td>绿灯</td><td>已改善</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:11px;color:#666;margin-top:8px;">上期5个异常主题中：3个已改善、2个部分改善、0个恶化。下一阶段应围绕经营效益和重点客群经营巩固改善成效。</p>
+  </section>
+
+  <section>
+    <h2>诊断结论</h2>
+    <div class="conclusion">
+      <p>该营业部综合健康度85.6分（健康），较上期提升2.2分，整体经营保持稳健。<strong>二次业务开发、团队效能和合规与风控</strong>表现良好；<strong>经营效益与资产与客群</strong>仍是当前持续改善重点。下一阶段应聚焦收入转化与重点客群经营，持续夯实基础。</p>
+    </div>
+  </section>
+
+  <section class="manager-analysis-section">
+    <div class="chapter-heading">负责人分析</div>
+    <p class="manager-analysis-note">以下负责人能力得分、上期比较及诊断内容均为模拟数据。</p>
+
+    <h2>需关注能力（待提升 · 共1项）</h2>
+    <div class="item item-yellow">
+      <div class="ri-head">数字化应用力 <span class="tag tag-yellow">待提升</span></div>
+      <div class="ri-val">当前得分：68 / 100，待提升 | 当前短板：企业微信客户触达、二次业务线索执行与转化</div>
+      <div class="ri-cause">
+        <div class="digital-flow" role="img" aria-label="数字化经营链路对比：企业微信客户添加率、二次业务线索执行率、二次业务线索转化率">
+          <div class="digital-flow-title">数字化经营链路对比</div>
+          <div class="digital-flow-track">
+            <div class="digital-stage">
+              <div class="digital-stage-kicker">01 · 客户触达</div>
+              <div class="digital-stage-name">企业微信客户添加率</div>
+              <div class="digital-stage-values"><strong>25%</strong><span class="digital-stage-peer">同类 27%</span></div>
+              <div class="digital-stage-gap">低于均值 2 个百分点</div>
+            </div>
+            <div class="digital-flow-arrow" aria-hidden="true"><span>→</span></div>
+            <div class="digital-stage">
+              <div class="digital-stage-kicker">02 · 线索执行</div>
+              <div class="digital-stage-name">二次业务线索执行率</div>
+              <div class="digital-stage-values"><strong>66%</strong><span class="digital-stage-peer">同类 72%</span></div>
+              <div class="digital-stage-gap">低于均值 6 个百分点</div>
+            </div>
+            <div class="digital-flow-arrow" aria-hidden="true"><span>→</span></div>
+            <div class="digital-stage">
+              <div class="digital-stage-kicker">03 · 线索转化</div>
+              <div class="digital-stage-name">二次业务线索转化率</div>
+              <div class="digital-stage-values"><strong>4.5%</strong><span class="digital-stage-peer">同类 3.8%</span></div>
+              <div class="digital-stage-gap">高于均值 0.7 个百分点</div>
+            </div>
+          </div>
+        </div>
+        <div class="digital-summary">
+          <strong>链路解读：</strong>企业微信客户添加率和二次业务线索执行率分别低于同类均值2个和6个百分点，说明前端客户触达和线索落地是当前主要短板；转化率高于同类均值0.7个百分点，说明有效线索一旦进入跟进环节，转化效率并不弱。
+          <br><strong>可能原因：</strong>数字化工具应用尚未形成从客户添加、线索执行到转化复盘的统一节奏，前端触达和中段执行不足限制了有效线索供给，导致数字化应用力综合得分为68分，处于待提升状态。
+        </div>
+      </div>
+      <div class="ri-action"><strong>建议措施：</strong><br>1. 建立负责人周度数字化经营看板，围绕客户触达、线索执行和转化结果进行复盘。<br>2. 将企业微信客户添加、重点客群标签和二次业务线索纳入统一跟进清单。<br>3. 每月选取重点转化案例复盘，固化数字工具使用和经营转化的标准动作。</div>
+    </div>
+
+    <h2>上期能力改进项跟踪</h2>
+    <table class="tracking-table">
+      <thead><tr><th style="width:34%">能力维度</th><th style="width:22%">上期得分</th><th style="width:22%">本期得分</th><th style="width:22%">变化</th></tr></thead>
+      <tbody>
+        <tr><td>团队领导力</td><td>86</td><td>92</td><td>提升</td></tr>
+        <tr><td>经营决策力</td><td>82</td><td>85</td><td>提升</td></tr>
+        <tr><td>财富管理专业力</td><td>72</td><td>76</td><td>提升</td></tr>
+        <tr><td>数字化应用力</td><td>58</td><td>68</td><td>部分改善</td></tr>
+        <tr><td>合规内控力</td><td>80</td><td>86</td><td>提升</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:11px;color:#666;margin-top:8px;">五维能力均较上期改善，其中数字化应用力虽提升10分，仍是当前唯一待提升能力，应纳入下一阶段重点改进事项。</p>
+
+    <h2>负责人诊断结论</h2>
+    <div class="conclusion">
+      <p>负责人本期综合得分81.4分，能力等级为“良好”。团队领导力表现优秀，经营决策力和合规内控力处于良好水平，财富管理专业力基本达标，数字化应用力仍是当前能力短板。下一阶段应聚焦企业微信客户添加、二次业务线索执行与转化结果复盘，将数字化工具使用沉淀为可执行、可跟踪的管理动作，推动负责人五维能力更加均衡。</p>
+    </div>
+  </section>
+
+  <section class="appendix-section">
+    <h2>附录：所有指标详情</h2>
+
+    <div class="appendix-block">
+      <div class="appendix-head">
+        <span class="dim-name">经营效益</span>
+        <span class="dim-score">43.5 / 50</span>
+        <span class="light-count">绿灯 3 | 黄灯 2 | 红灯 0</span>
+      </div>
+      <table class="appendix-table">
+        <thead><tr><th style="width:34%">指标名称</th><th style="width:16%">数值</th><th style="width:12%">线上来源</th><th style="width:12%">线下来源</th><th style="width:10%" class="score">得分</th><th style="width:16%">当前状态</th></tr></thead>
+        <tbody>
+          <tr><td>利润完成率</td><td>90%</td><td>32%</td><td>68%</td><td class="score">27</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td>代买收份额增幅</td><td>+5%</td><td>28%</td><td>72%</td><td class="score">6</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>两融日均余额份额增幅</td><td>+2%</td><td>35%</td><td>65%</td><td class="score">3</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td>财富管理转型收入占比</td><td>同比+4%</td><td>40%</td><td>60%</td><td class="score">5</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>机构业务收入占比</td><td>同比+1%</td><td>15%</td><td>85%</td><td class="score">2.5</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="appendix-block">
+      <div class="appendix-head">
+        <span class="dim-name">资产与客群</span>
+        <span class="dim-score">12.8 / 15</span>
+        <span class="light-count">绿灯 13 | 黄灯 5 | 红灯 0</span>
+      </div>
+      <table class="appendix-table">
+        <thead><tr><th style="width:34%">指标名称</th><th style="width:16%">数值</th><th style="width:12%">线上来源</th><th style="width:12%">线下来源</th><th style="width:10%" class="score">得分</th><th style="width:16%">当前状态</th></tr></thead>
+        <tbody>
+          <tr><td>总资产（亿元）</td><td>68.4亿</td><td>27.4亿</td><td>41.0亿</td><td class="score">5</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>存量客户资产（万元）</td><td>同比+1.8%</td><td>--</td><td>--</td><td class="score">7.2</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td class="ind-sub">存量零售个人客户资产</td><td>同比+2.5%</td><td>30%</td><td>70%</td><td class="score">--</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td class="ind-sub">存量高净值个人客户资产</td><td>22.3亿，同比+0.5%</td><td>20%</td><td>80%</td><td class="score">--</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td class="ind-sub">存量机构客户资产</td><td>同比+3%</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>当年新开新增客户资产（万元）</td><td>1.45亿</td><td>--</td><td>--</td><td class="score">16.8</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td class="ind-sub">-零售客户</td><td>0.55亿</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td class="ind-sub">-高净值客户</td><td>0.50亿</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td class="ind-sub">-机构客户</td><td>0.35亿</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>当年客户流失资产（万元）</td><td>0.62亿</td><td>--</td><td>--</td><td class="score">15</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td class="ind-sub">-零售客户</td><td>0.15亿</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td class="ind-sub">-高净值客户</td><td>0.35亿</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td class="ind-sub">-机构客户</td><td>0.12亿</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>当年新开零售客户数</td><td>高于均值12%</td><td>45%</td><td>55%</td><td class="score">10</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>当年新开高净值客户数</td><td>均值±10%</td><td>25%</td><td>75%</td><td class="score">6</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td>当年新开机构客户数</td><td>高于均值15%</td><td>--</td><td>--</td><td class="score">10</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>零售客户资产过万客户数</td><td>同比增长</td><td>--</td><td>--</td><td class="score">10</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>交易客户数（近三月有交易）</td><td>同比增长</td><td>--</td><td>--</td><td class="score">10</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="appendix-block">
+      <div class="appendix-head">
+        <span class="dim-name">二次业务开发</span>
+        <span class="dim-score">12.6 / 15</span>
+        <span class="light-count">绿灯 4 | 黄灯 8 | 红灯 0</span>
+      </div>
+      <table class="appendix-table">
+        <thead><tr><th style="width:34%">指标名称</th><th style="width:16%">数值</th><th style="width:12%">线上来源</th><th style="width:12%">线下来源</th><th style="width:10%" class="score">得分</th><th style="width:16%">当前状态</th></tr></thead>
+        <tbody>
+          <tr><td>两融业务</td><td>--</td><td>--</td><td>--</td><td class="score">9.3</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td class="ind-sub">当年新开信用账户</td><td>高于均值12%</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td class="ind-sub">当年新开新增授信额度</td><td>均值±10%</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td class="ind-sub">两融息费收入</td><td>同比+12%</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>产品销售</td><td>--</td><td>--</td><td>--</td><td class="score">2.7</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td class="ind-sub">产品保有标准规模</td><td>完成率88%</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td class="ind-sub">金融产品考核收入</td><td>完成率92%</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td>投顾业务</td><td>--</td><td>--</td><td>--</td><td class="score">4.2</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td class="ind-sub">投顾业务收入</td><td>完成率95%</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td class="ind-sub">投顾业务收入占比</td><td>高于均值5%</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td>量化业务</td><td>--</td><td>--</td><td>--</td><td class="score">6.5</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td class="ind-sub">量化业务收入</td><td>完成率110%</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td class="ind-sub">运行客户数占比</td><td>高于均值15%</td><td>--</td><td>--</td><td class="score">--</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>机构经纪业务收入</td><td>118万元，同比+4%</td><td>--</td><td>--</td><td class="score">2.1</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="appendix-block">
+      <div class="appendix-head">
+        <span class="dim-name">团队效能</span>
+        <span class="dim-score">8.3 / 10</span>
+        <span class="light-count">绿灯 3 | 黄灯 3 | 红灯 0</span>
+      </div>
+      <table class="appendix-table">
+        <thead><tr><th style="width:34%">指标名称</th><th style="width:16%">数值</th><th style="width:12%">线上来源</th><th style="width:12%">线下来源</th><th style="width:10%" class="score">得分</th><th style="width:16%">当前状态</th></tr></thead>
+        <tbody>
+          <tr><td>理财经理人均创收</td><td>同类前25%</td><td>--</td><td>--</td><td class="score">3</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>理财经理人均金融产品保有规模</td><td>中位数水平</td><td>--</td><td>--</td><td class="score">1.2</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td>理财经理人均新增标准资产</td><td>同类前28%</td><td>--</td><td>--</td><td class="score">2</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>具有基金资格人数占比</td><td>96%</td><td>--</td><td>--</td><td class="score">0.9</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>线索执行率</td><td>72%</td><td>--</td><td>--</td><td class="score">0.6</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+          <tr><td>包内累计服务覆盖率</td><td>65%</td><td>--</td><td>--</td><td class="score">0.6</td><td><span class="status-mini status-yellow">黄灯</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="appendix-block">
+      <div class="appendix-head">
+        <span class="dim-name">合规与风控</span>
+        <span class="dim-score">8.4 / 10</span>
+        <span class="light-count">绿灯 2 | 黄灯 0 | 红灯 0</span>
+      </div>
+      <table class="appendix-table">
+        <thead><tr><th style="width:34%">指标名称</th><th style="width:16%">数值</th><th style="width:12%">线上来源</th><th style="width:12%">线下来源</th><th style="width:10%" class="score">得分</th><th style="width:16%">当前状态</th></tr></thead>
+        <tbody>
+          <tr><td>合规考核扣分</td><td>1分</td><td>--</td><td>--</td><td class="score">5.4</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+          <tr><td>客户投诉事件数</td><td>0件</td><td>--</td><td>--</td><td class="score">3.0</td><td><span class="status-mini status-green">绿灯</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="manager-appendix-start">
+      <div class="appendix-subheading">负责人能力细项指标</div>
+      <p class="manager-appendix-note">以下指标名称、评价类别与权重严格依据《经纪业务分支机构负责人分类分阶段素养提升方案》；本期表现与同类均值为模拟数据，细项得分按方案评分标准计算，维度得分按权重汇总。</p>
+
+      <div class="appendix-block">
+        <div class="appendix-head">
+          <span class="dim-name">团队领导力</span>
+          <span class="dim-score">92 / 100</span>
+          <span class="light-count">同类均值 75 | 能力等级：优秀</span>
+        </div>
+        <table class="appendix-table manager-appendix-table">
+          <colgroup><col style="width:10%"><col style="width:30%"><col style="width:9%"><col style="width:28%"><col style="width:13%"><col style="width:10%"></colgroup>
+          <thead><tr><th class="metric-type">类别</th><th>方案评价指标</th><th class="metric-weight">权重</th><th>本期表现</th><th>同类均值</th><th class="score">得分</th></tr></thead>
+          <tbody>
+            <tr><td class="metric-type">定量</td><td>团队人均当季新增考核净创收完成率</td><td class="metric-weight">30%</td><td>完成率 106%</td><td>95%</td><td class="score">100</td></tr>
+            <tr><td class="metric-type">定量</td><td>理经团队成员中A9级及以上人数占比</td><td class="metric-weight">30%</td><td>占比 63%</td><td>55%</td><td class="score">100</td></tr>
+            <tr><td class="metric-type">定量</td><td>榜样的力量二次转训次数</td><td class="metric-weight">20%</td><td>10 次/季</td><td>8 次/季</td><td class="score">80</td></tr>
+            <tr><td class="metric-type">定性</td><td>团队凝聚力（干部民主评议、工作氛围）</td><td class="metric-weight">20%</td><td>B 档</td><td>B 档</td><td class="score">80</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="appendix-block">
+        <div class="appendix-head">
+          <span class="dim-name">经营决策力</span>
+          <span class="dim-score">85 / 100</span>
+          <span class="light-count">同类均值 78 | 能力等级：良好</span>
+        </div>
+        <table class="appendix-table manager-appendix-table">
+          <colgroup><col style="width:10%"><col style="width:30%"><col style="width:9%"><col style="width:28%"><col style="width:13%"><col style="width:10%"></colgroup>
+          <thead><tr><th class="metric-type">类别</th><th>方案评价指标</th><th class="metric-weight">权重</th><th>本期表现</th><th>同类均值</th><th class="score">得分</th></tr></thead>
+          <tbody>
+            <tr><td class="metric-type">定量</td><td>利润目标完成率</td><td class="metric-weight">40%</td><td>完成率 102%</td><td>96%</td><td class="score">100</td></tr>
+            <tr><td class="metric-type">定量</td><td>两融目标完成率</td><td class="metric-weight">30%</td><td>完成率 95%</td><td>91%</td><td class="score">80</td></tr>
+            <tr><td class="metric-type">定量</td><td>客户资产规模（AUM）增长率</td><td class="metric-weight">15%</td><td>增长率 7%</td><td>6%</td><td class="score">60</td></tr>
+            <tr><td class="metric-type">定量</td><td>股基交易量市场份额增长率</td><td class="metric-weight">15%</td><td>增长率 6%</td><td>4%</td><td class="score">80</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="appendix-block">
+        <div class="appendix-head">
+          <span class="dim-name">财富管理专业力</span>
+          <span class="dim-score">76 / 100</span>
+          <span class="light-count">同类均值 72 | 能力等级：达标</span>
+        </div>
+        <table class="appendix-table manager-appendix-table">
+          <colgroup><col style="width:10%"><col style="width:30%"><col style="width:9%"><col style="width:28%"><col style="width:13%"><col style="width:10%"></colgroup>
+          <thead><tr><th class="metric-type">类别</th><th>方案评价指标</th><th class="metric-weight">权重</th><th>本期表现</th><th>同类均值</th><th class="score">得分</th></tr></thead>
+          <tbody>
+            <tr><td class="metric-type">定量</td><td>财富管理业务收入占比</td><td class="metric-weight">40%</td><td>收入占比 25%</td><td>20%</td><td class="score">80</td></tr>
+            <tr><td class="metric-type">定量</td><td>金融产品保有标准规模完成率</td><td class="metric-weight">20%</td><td>完成率 82%</td><td>85%</td><td class="score">60</td></tr>
+            <tr><td class="metric-type">定量</td><td>投顾签约客户覆盖率</td><td class="metric-weight">20%</td><td>覆盖率 18%</td><td>14%</td><td class="score">80</td></tr>
+            <tr><td class="metric-type">定量</td><td>量化运营客户占比</td><td class="metric-weight">20%</td><td>客户占比 18%</td><td>12%</td><td class="score">80</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="appendix-block">
+        <div class="appendix-head">
+          <span class="dim-name">数字化应用力</span>
+          <span class="dim-score">68 / 100</span>
+          <span class="light-count">同类均值 70 | 能力等级：待提升</span>
+        </div>
+        <table class="appendix-table manager-appendix-table">
+          <colgroup><col style="width:10%"><col style="width:30%"><col style="width:9%"><col style="width:28%"><col style="width:13%"><col style="width:10%"></colgroup>
+          <thead><tr><th class="metric-type">类别</th><th>方案评价指标</th><th class="metric-weight">权重</th><th>本期表现</th><th>同类均值</th><th class="score">得分</th></tr></thead>
+          <tbody>
+            <tr><td class="metric-type">定量</td><td>企业微信客户添加率</td><td class="metric-weight">20%</td><td>添加率 25%</td><td>27%</td><td class="score">60</td></tr>
+            <tr><td class="metric-type">定量</td><td>二次业务线索执行率</td><td class="metric-weight">40%</td><td>执行率 66%</td><td>72%</td><td class="score">60</td></tr>
+            <tr><td class="metric-type">定量</td><td>二次业务线索转化率</td><td class="metric-weight">40%</td><td>转化率 4.5%</td><td>3.8%</td><td class="score">80</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="appendix-block">
+        <div class="appendix-head">
+          <span class="dim-name">合规内控力</span>
+          <span class="dim-score">86 / 100</span>
+          <span class="light-count">同类均值 77 | 能力等级：良好</span>
+        </div>
+        <table class="appendix-table manager-appendix-table">
+          <colgroup><col style="width:10%"><col style="width:30%"><col style="width:9%"><col style="width:28%"><col style="width:13%"><col style="width:10%"></colgroup>
+          <thead><tr><th class="metric-type">类别</th><th>方案评价指标</th><th class="metric-weight">权重</th><th>本期表现</th><th>同类均值</th><th class="score">得分</th></tr></thead>
+          <tbody>
+            <tr><td class="metric-type">定量</td><td>监管处罚次数（机构或人员）</td><td class="metric-weight">30%</td><td>0 次</td><td>0 次</td><td class="score">100</td></tr>
+            <tr><td class="metric-type">定量</td><td>稽核审计/检查问题项数</td><td class="metric-weight">20%</td><td>2 项</td><td>3 项</td><td class="score">80</td></tr>
+            <tr><td class="metric-type">定量</td><td>员工执业行为处分公告</td><td class="metric-weight">30%</td><td>1 件</td><td>1 件</td><td class="score">80</td></tr>
+            <tr><td class="metric-type">定量</td><td>员工手机预警笔数</td><td class="metric-weight">20%</td><td>1 笔</td><td>1 笔</td><td class="score">80</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="footnote">
+    星沙大道营业部为虚拟示例，经营数据及负责人能力数据均为模拟
+  </div>
+
+</body>
+</html>

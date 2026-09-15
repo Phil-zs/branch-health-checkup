@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>分支机构经营体检报告</title>
+  <style>
+    :root {
+      --navy: #17324d;
+      --blue: #1f6feb;
+      --teal: #0b7285;
+      --green: #277a5a;
+      --green-soft: #e7f5ee;
+      --amber: #9a6700;
+      --amber-soft: #fff4d6;
+      --red: #b42318;
+      --red-soft: #feeceb;
+      --ink: #243447;
+      --muted: #6c7d90;
+      --line: #dce5ee;
+      --panel: #ffffff;
+      --canvas: #f3f7fb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .report-shell { max-width: 1120px; margin: 0 auto; padding: 28px 22px 56px; }
+    .cover {
+      color: #fff;
+      background: #17324d;
+      border-radius: 18px;
+      padding: 34px 38px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 14px 30px rgba(23, 50, 77, .14);
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      right: -88px;
+      top: -88px;
+      width: 240px;
+      height: 240px;
+      border: 28px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+    }
+    .cover h1 { margin: 0; max-width: 760px; font-size: clamp(26px, 4vw, 40px); line-height: 1.25; font-weight: 700; }
+    .report-date { margin: 14px 0 0; color: #d9e7f5; font-size: 14px; }
+    .section { margin-top: 24px; }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 14px; }
+    .section-heading h2 { margin: 0; color: var(--navy); font-size: 23px; line-height: 1.25; }
+    .section-heading p { margin: 0; color: var(--muted); font-size: 13px; }
+    .summary-grid { display: grid; grid-template-columns: 1.35fr repeat(3, 1fr); gap: 12px; }
+    .summary-card { min-height: 116px; padding: 18px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; }
+    .summary-card.primary { color: #fff; background: #0b7285; border-color: #0b7285; }
+    .summary-label { color: var(--muted); font-size: 12px; }
+    .primary .summary-label { color: #d6f4f8; }
+    .summary-value { margin-top: 4px; color: var(--navy); font-size: 30px; font-weight: 700; }
+    .primary .summary-value { color: #fff; }
+    .summary-note { color: var(--muted); font-size: 12px; }
+    .primary .summary-note { color: #d6f4f8; }
+    .summary-hero { display: grid; grid-template-columns: 180px 1fr auto; gap: 18px; align-items: center; padding: 18px 0; border-top: 2px solid var(--navy); border-bottom: 1px solid var(--line); }
+    .overall-number { min-width: 180px; color: var(--navy); font-size: 52px; line-height: 1; font-weight: 800; white-space: nowrap; }
+    .overall-number small { font-size: 16px; font-weight: 600; }
+    .overall-title { margin: 0; color: var(--navy); font-size: 20px; }
+    .overall-subtitle { margin: 4px 0 10px; color: var(--muted); font-size: 13px; }
+    .focus-line { margin: 0; color: var(--ink); font-size: 14px; font-weight: 600; }
+    .light-counts { display: flex; gap: 16px; align-items: center; color: var(--muted); font-size: 13px; white-space: nowrap; }
+    .light-counts strong { color: var(--navy); font-size: 18px; }
+    .section-band { margin: 18px 0 12px; padding: 9px 14px; color: var(--navy); background: #e8edf2; font-size: 18px; font-weight: 700; }
+    .overview-text, .conclusion-text { margin: 0; padding: 0 14px; color: var(--ink); font-size: 14px; line-height: 1.9; }
+    .summary-table table { min-width: 680px; }
+    .summary-table th { background: #304d68; }
+    .summary-table td { font-size: 13px; }
+    .summary-table .dimension-name { font-size: 14px; }
+    .monitor-table table { min-width: 800px; }
+    .monitor-table td { font-size: 13px; }
+    .monitor-note { margin: 12px 0 0; color: var(--muted); font-size: 12px; }
+    .appendix-group { margin-bottom: 20px; break-inside: avoid; page-break-inside: avoid; }
+    .appendix-group-head { display: flex; align-items: baseline; gap: 18px; padding: 11px 14px; color: var(--navy); background: #f0f3f6; border-bottom: 2px solid var(--navy); }
+    .appendix-group-head strong { font-size: 17px; }
+    .appendix-group-head span { color: var(--muted); font-size: 12px; }
+    .appendix-group table { min-width: 720px; border: 1px solid var(--line); border-top: 0; border-radius: 0; }
+    .appendix-group th { padding: 8px 10px; color: var(--navy); background: #f8fafc; border-bottom: 1px solid var(--line); }
+    .appendix-group td { padding: 8px 10px; }
+    .dimension-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+    .dimension-card { min-height: 138px; padding: 15px; background: var(--panel); border: 1px solid var(--line); border-top: 4px solid var(--blue); border-radius: 12px; }
+    .dimension-card.status-green { border-top-color: var(--green); }
+    .dimension-card.status-yellow { border-top-color: #d49a00; }
+    .dimension-card.status-red { border-top-color: var(--red); }
+    .dimension-name { color: var(--navy); font-weight: 700; font-size: 15px; }
+    .dimension-score { margin-top: 10px; color: var(--navy); font-size: 27px; font-weight: 700; }
+    .dimension-detail { color: var(--muted); font-size: 12px; }
+    .status-badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+    .status-badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .status-green { color: var(--green); background: var(--green-soft); }
+    .status-yellow { color: var(--amber); background: var(--amber-soft); }
+    .status-red { color: var(--red); background: var(--red-soft); }
+    .status-missing { color: #5f6b7a; background: #eef2f6; }
+    .topic-stack { display: grid; gap: 14px; }
+    .topic-card { background: var(--panel); border: 1px solid var(--line); border-left: 5px solid var(--blue); border-radius: 14px; overflow: hidden; }
+    .topic-card.status-red { border-left-color: var(--red); }
+    .topic-card.status-yellow { border-left-color: #d49a00; }
+    .topic-head { display: flex; justify-content: space-between; align-items: start; gap: 12px; padding: 18px 20px 12px; }
+    .topic-eyebrow { margin: 0 0 2px; color: var(--muted); font-size: 11px; letter-spacing: .08em; }
+    .topic-head h3 { margin: 0; color: var(--navy); font-size: 20px; }
+    .topic-line, .topic-block { margin: 0 20px; padding: 13px 0; border-top: 1px solid var(--line); }
+    .topic-line { display: flex; justify-content: space-between; gap: 20px; align-items: baseline; }
+    .topic-line span, .topic-label { color: var(--muted); font-size: 12px; }
+    .topic-line strong { color: var(--navy); font-size: 15px; text-align: right; }
+    .topic-block ul, .topic-block ol { margin: 8px 0 0; padding-left: 20px; }
+    .topic-block li { margin: 4px 0; font-size: 14px; }
+    .measure-list { display: grid; gap: 8px; margin-top: 8px; }
+    .measure-item { padding: 10px 12px; background: #f7fafc; border: 1px solid #e7eef5; border-radius: 9px; }
+    .measure-item strong { display: block; color: var(--navy); font-size: 14px; }
+    .measure-meta { margin-top: 4px; color: var(--muted); font-size: 12px; }
+    .action-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .action-card { padding: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+    .action-card h3 { margin: 0 0 6px; color: var(--navy); font-size: 15px; }
+    .action-card p { margin: 0; color: var(--ink); font-size: 14px; }
+    .action-card small { display: block; margin-top: 8px; color: var(--muted); font-size: 12px; }
+    .table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; }
+    table { width: 100%; min-width: 980px; border-collapse: collapse; font-size: 12px; }
+    th { padding: 11px 10px; color: #fff; background: #2b587d; text-align: left; white-space: nowrap; }
+    td { padding: 10px; border-top: 1px solid #e7eef5; vertical-align: top; }
+    tbody tr:nth-child(even) { background: #f8fbfd; }
+    .metric-id { color: var(--teal); font-family: Consolas, monospace; font-weight: 700; }
+    .metric-name { color: var(--navy); font-weight: 600; }
+    .footer { margin-top: 34px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .muted-note { padding: 16px; color: var(--muted); background: #f8fbfd; border: 1px dashed var(--line); border-radius: 12px; }
+    @media (max-width: 840px) {
+      .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .summary-card.primary { grid-column: 1 / -1; }
+      .dimension-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .report-shell { padding: 14px 12px 40px; }
+      .cover { padding: 25px 22px; border-radius: 14px; }
+      .summary-grid, .dimension-grid, .action-grid { grid-template-columns: 1fr; }
+      .summary-hero { grid-template-columns: 1fr; gap: 10px; }
+      .light-counts { flex-wrap: wrap; }
+      .summary-card.primary { grid-column: auto; }
+      .topic-line { display: block; }
+      .topic-line strong { display: block; margin-top: 5px; text-align: left; }
+      .section-heading { display: block; }
+      .section-heading p { margin-top: 6px; }
+    }
+    @media print {
+      body { background: #fff; }
+      .report-shell { max-width: none; padding: 0; }
+      .cover { box-shadow: none; }
+      .summary-hero { border-top-color: #222; }
+      .section-band { break-after: avoid; page-break-after: avoid; }
+      .section.appendix { break-before: page; page-break-before: always; }
+    }
+  </style>
+</head>
+<body>
+  <div class="report-shell">
+    <header class="cover">
+      <h1><span data-bind="branch"></span>经营体检报告</h1>
+      <p class="report-date">报告日期：<span data-bind="report-date"></span></p>
+      <p class="report-date">报告期间：<span data-bind="period"></span>　负责人：<span data-bind="manager"></span></p>
+    </header>
+
+    <section class="section">
+      <div class="section-heading"><h2>综合健康度</h2><p>指标状态由输入数据和阈值确定，报告文字不改写计算结果。</p></div>
+      <div class="summary-hero">
+        <div class="overall-number" data-bind="overall"></div>
+        <div>
+          <h3 class="overall-title">综合健康度：<span data-bind="overall-status"></span></h3>
+          <p class="focus-line">本月重点关注：<span data-bind="focus"></span></p>
+        </div>
+        <div class="light-counts"><span>绿灯 <strong data-bind="green-count"></strong></span><span>黄灯 <strong data-bind="yellow-count"></strong></span><span>红灯 <strong data-bind="red-count"></strong></span></div>
+      </div>
+      <div class="muted-note" id="data-warning" style="display:none; margin-top: 12px;"></div>
+      <div class="section-band">维度汇总</div>
+      <div class="table-wrap summary-table">
+        <table>
+          <thead><tr><th>维度</th><th>绿灯</th><th>黄灯</th><th>红灯</th><th>健康得分</th></tr></thead>
+          <tbody id="dimension-summary"></tbody>
+        </table>
+      </div>
+      <div class="section-band">总体概述</div>
+      <p class="overview-text" data-bind="overview"></p>
+    </section>
+
+    <section class="section" id="manager-summary-section">
+      <div class="section-band">负责人综合情况</div>
+      <div id="manager-summary" class="overview-text">-</div>
+    </section>
+
+    <section class="section" id="branch-analysis-section">
+      <div class="section-band">分支机构分析</div>
+
+    <section class="section" id="core-section">
+      <div class="section-heading"><h2>核心异常主题（红灯 · 共<span data-bind="core-count"></span>项）</h2><p>按维度综合状态识别</p></div>
+      <div class="topic-stack" id="core-topics"></div>
+    </section>
+
+    <section class="section" id="attention-section">
+      <div class="section-heading"><h2>需关注主题（黄灯 · 共<span data-bind="attention-count"></span>项）</h2><p>按维度综合状态识别</p></div>
+      <div class="topic-stack" id="attention-topics"></div>
+    </section>
+
+    <section class="section" id="conclusion-section">
+      <div class="section-band">诊断结论</div>
+      <p class="conclusion-text" data-bind="conclusion"></p>
+    </section>
+
+    <section class="section" id="leader-section" style="display:none">
+      <div class="section-band">负责人分析</div>
+      <div class="section-heading"><h2>需关注能力</h2><p>按负责人五维能力得分识别</p></div>
+      <div id="leader-content" class="dimension-grid"></div>
+      <div class="section-band">负责人诊断结论</div><p id="leader-conclusion" class="conclusion-text">-</p>
+    </section>
+
+    <section class="section appendix">
+      <div class="section-band">附录：所有指标详情</div>
+      <div id="metric-appendix"></div>
+    </section>
+
+    <footer class="footer">本报告由 branch-health-checkup 离线生成。数值、状态、阈值和得分均来自本地输入文件；异常原因与措施来自维度级规则。</footer>
+  </div>
+
+  <script id="report-data" type="application/json">{{REPORT_JSON}}</script>
+  <script>
+    (() => {
+      const report = JSON.parse(document.getElementById('report-data').textContent);
+      const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+      const setText = (key, value) => { const node = document.querySelector(`[data-bind="${key}"]`); if (node) node.textContent = value; };
+      const statusBadge = (dimension) => `<span class="status-badge ${esc(dimension.statusClass)}">${esc(dimension.statusLabel)}</span>`;
+      setText('branch', report.branchName);
+      setText('report-date', report.reportDate);
+      setText('branch', report.branchName || '-'); setText('period', report.period || '-'); setText('manager', report.managerName || '-');
+      document.title = `${report.branchName}经营体检报告`;
+      const overallStatus = report.overallScore === null ? '数据不足' : report.overallScore < 60 ? '异常（红灯）' : report.overallScore < 80 ? '关注（黄灯）' : '健康（绿灯）';
+      setText('overall', report.overallScore === null ? '数据不足' : `${Number(report.overallScore).toFixed(1)}分`);
+      setText('overall-status', overallStatus);
+      setText('focus', report.focusText || '暂无重点关注项');
+      setText('overview', report.overviewText || '暂无总体概述');
+      setText('conclusion', report.conclusionText || '暂无诊断结论');
+      if (report.leader) { document.getElementById('leader-section').style.display='block'; const weak=report.leader.dimensions.filter(d=>d.score<70).map(d=>d.name); document.getElementById('manager-summary').textContent=`负责人综合得分${Number(report.leader.overall).toFixed(2)}分，能力等级${report.leader.overall>=90?'优秀':report.leader.overall>=80?'良好':report.leader.overall>=70?'达标':report.leader.overall>=60?'待提升':'预警'}。${weak.length?'当前需关注：'+weak.join('、')+'。':'五项能力均达到70分达标线。'}`; document.getElementById('leader-content').innerHTML=report.leader.dimensions.map(d=>`<div class="dimension-card"><div class="dimension-name">${esc(d.name)} <span class="status-badge">${esc(d.status)}</span></div><div class="dimension-score">${Number(d.score).toFixed(2)}分</div><div class="dimension-detail">单项能力达标线：70分</div></div>`).join(''); document.getElementById('leader-conclusion').textContent=`负责人综合得分${Number(report.leader.overall).toFixed(2)}分。${weak.length?'应优先提升'+weak.join('、')+'。':'负责人五维能力整体稳定。'}`; }
+      setText('green-count', `${report.counts.green}个`);
+      setText('yellow-count', `${report.counts.yellow}个`);
+      setText('red-count', `${report.counts.red}个`);
+      setText('core-count', `${(report.core || []).length}`);
+      setText('attention-count', `${(report.attention || []).length}`);
+      if (report.missingMetrics && report.missingMetrics.length) {
+        const warning = document.getElementById('data-warning');
+        warning.style.display = '';
+        warning.textContent = `本次输入缺少 ${report.missingMetrics.length} 项指标：${report.missingMetrics.map((metric) => metric.name).join('、')}。相关维度和综合健康度不计算，补齐数据后可重新生成完整报告。`;
+      }
+
+      document.getElementById('dimension-summary').innerHTML = report.dimensions.map((dimension) => `
+        <tr><td class="dimension-name">${esc(dimension.name)}</td><td>${dimension.greenCount}</td><td>${dimension.yellowCount}</td><td>${dimension.redCount}</td><td>${esc(dimension.scoreDisplay || '数据不足')} ${statusBadge(dimension)}</td></tr>`).join('');
+
+      const topicMarkup = (dimension) => `
+        <article class="topic-card ${esc(dimension.statusClass)}">
+          <div class="topic-head"><div><h3>${esc(dimension.name)}</h3></div>${statusBadge(dimension)}</div>
+          <div class="topic-line"><span>当前值 / 阈值</span><strong>${esc(dimension.currentThreshold)}</strong></div>
+          <div class="topic-block"><div class="topic-label">可能原因</div><ul>${dimension.causes.map((cause) => `<li>${esc(cause)}</li>`).join('')}</ul></div>
+          <div class="topic-block"><div class="topic-label">建议措施</div><div class="measure-list">${dimension.measures.map((measure) => `<div class="measure-item"><strong>${esc(measure.summary)}</strong><div class="measure-meta">责任部门：${esc(measure.owner || '未配置')}　资源支持：${esc(measure.resource || '未配置')}　优先级：${esc(measure.priority || '未配置')}</div></div>`).join('')}</div></div>
+        </article>`;
+
+      const coreSection = document.getElementById('core-section');
+      const attentionSection = document.getElementById('attention-section');
+      const core = report.core || [];
+      const attention = report.attention || [];
+      coreSection.style.display = core.length ? '' : 'none';
+      attentionSection.style.display = attention.length ? '' : 'none';
+      document.getElementById('core-topics').innerHTML = core.map(topicMarkup).join('');
+      document.getElementById('attention-topics').innerHTML = attention.map(topicMarkup).join('');
+
+      const appendix = document.getElementById('metric-appendix');
+      appendix.innerHTML = report.dimensions.map((dimension) => {
+        const metrics = report.metrics.filter((metric) => metric.dimensionId === dimension.id);
+        return `<section class="appendix-group"><div class="appendix-group-head"><strong>${esc(dimension.name)}　${esc(dimension.scoreDisplay || '数据不足')}</strong><span>绿灯 ${dimension.greenCount}｜黄灯 ${dimension.yellowCount}｜红灯 ${dimension.redCount}</span></div><div class="table-wrap"><table><thead><tr><th>指标名称</th><th>总值</th><th>线上值</th><th>线下值</th><th>得分</th><th>当前状态</th></tr></thead><tbody>${metrics.map((metric) => `<tr><td class="metric-name">${esc(metric.name)}</td><td>${esc(metric.currentDisplay)}</td><td>${esc(metric.onlineDisplay || '无数据')}</td><td>${esc(metric.offlineDisplay || '无数据')}</td><td>${metric.score === null ? '无数据' : Number(metric.score).toFixed(2)}</td><td>${statusBadge(metric)}</td></tr>`).join('')}</tbody></table></div></section>`;
+      }).join('');
+    })();
+  </script>
+</body>
+</html>
